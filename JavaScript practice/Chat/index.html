@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Static File Index.HTML</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+    </head>
+    <body>
+        <style>
+
+            .chat__header {
+              text-align: left;
+            }
+            .chat__message-content {
+              border-radius: 5px;
+              padding: 7px;
+              background-color: #ccc;
+              display: inline-block;
+              margin-left: 5px;
+            }
+            </style>
+            <body>
+                 
+            <main class="main">
+                <div class="chat"> 
+                    <h1 class="chat__header">Chat</h1>
+                <div id="content" class = "chat__header">
+                    <div class="chat__item">
+                        <h1 id = "chat__message-content" class="chat__message-content"></h1>
+                    </div>
+                    <div class="send_form">
+                        Nick :<input type="text" id = 'nick' > 
+                        Message :<input type="text" id = 'msg'>
+                        <button id="sendButton">Отправить</button>
+                    </div>
+                   
+                </div>
+            </main>
+            
+            <script>
+                const socket = io('http://socketchat.ed.asmer.org.ua')
+                socket.on('msg', msg => {
+                    console.log(msg)
+                    const my_P = document.createElement("div");
+                    my_P.innerHTML = '<b>' + msg.nick + ":" +"</b>" + msg.message
+                    document.getElementById("chat__message-content").appendChild(my_P)
+                })
+                
+                sendButton.onclick = () => {
+                    console.log(nick.value , msg.value)
+                    socket.emit('msg', {nick: nick.value, message: msg.value})
+                }
+            </script>
+    </body>
+</html>

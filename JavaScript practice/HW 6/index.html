@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // -----------------------Анализ
+            
+            function a(text) {
+                alert(text);
+            }
+
+            // -----------------------cube
+
+            function cube(number) {
+                number = number ** 3;
+                return number;
+            }
+
+            // -----------------------avg2
+
+            function avg2(a, b) {
+                let average = (a + b) / 2;
+                return average;
+            }
+
+            // -----------------------sum3
+
+            function sum3(a = 0, b = 0, c = 0) {
+                let sumsNumbers = a + b + c;
+                return sumsNumbers;
+            }
+
+            // -----------------------intRandom
+
+            function intRandom(a = 0, b = 0) {
+                let randomNumber = Math.random() * (b - a) + a;
+                return Math.round(randomNumber);
+            }
+
+            // -----------------------greetAll
+
+            function greetAll() {
+                let arr = "";
+                if (arr != "") {
+                    arr = "";
+                }
+                for (let i = 0; i < arguments.length; i++) {
+                    arr += arguments[i] + "," + " ";
+                }
+                
+                arr = arr.slice(0, -2);
+                console.log(arr);
+                alert("Hello " + arr + "!");
+            }
+
+            // ------------------------sum
+
+            function sum(array) {
+                var sum = 0;
+                for (var i = 0; i < arguments.length; i++) {
+                    sum += arguments[i];
+                }
+                return sum;
+            }
+
+            // ------------------------Union
+
+            function aSample() {
+                return a("Hello");
+            }
+            function cubeSample() {
+                return cube(10);
+            }
+            function avg2Sample() {
+                return avg2(20, 30);
+            }
+            function sum3Sample() {
+                return sum3(1, 2);
+            }
+            function intRandomSample() {
+                return intRandom(1, 10);
+            }
+            function greetAllSample() {
+                return greetAll("Anton", "Illia", "Andrey");
+            }
+            function sumSample() {
+                return sum(1, 2, 3, 4, 5, 6, 7, 8, 9);
+            }
+
+            // let taskByName = prompt("Введите название задания");
+            // switch (taskByName.toLowerCase()) {
+            //     case "a":
+            //         aSample();
+            //         break;
+            //     case "cube":
+            //         cubeSample();
+            //         break;
+            //     case "avg2":
+            //         avg2Sample();
+            //         break;
+            //     case "sum3":
+            //         sum3Sample();
+            //         break;
+            //     case "intRandom":
+            //         intRandomSample();
+            //         break;
+            //     case "greetAll":
+            //         greetAllSample();
+            //         break;
+            //     case "sum":
+            //         sumSample();
+            //         break;
+            // }
+
+            // ------------------------Union declarative
+
+            let union = {
+                a () {
+                    a("Hello") 
+                },
+                cube () {
+                    cube(10)
+                },
+                avg2 () {
+                    avg2(20, 30)
+                },
+                sum3 () {
+                    sum3(1, 2)
+                },
+                intRandom () {
+                    intRandom(1, 10)
+                },
+                greetAll () {
+                    greetAll("Anton", "Illia", "Andrey")
+                },
+                sum () {
+                    sum(1, 2, 3, 4, 5, 6, 7, 8, 9)
+                },
+            };
+
+            console.log(union[prompt("Введите название задания")]());
+        </script>
+    </body>
+</html>

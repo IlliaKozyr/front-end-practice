@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+        />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Светофор</title>
+        <style>
+            .container {
+                padding-top: 30px;
+                display: flex;
+                justify-content: center;
+            }
+            #trafficLightBlock {
+                background-color: black;
+                max-width: 200px;
+                height: 660px;
+                padding: 30px;
+            }
+            #trafficLightPedestrian {
+                margin-left: 100px;
+                background-color: black;
+                max-width: 200px;
+                height: 430px;
+                padding: 30px;
+            }
+            #red,
+            #Red {
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                background-color: gray;
+                margin: 0;
+                margin-bottom: 30px;
+            }
+            #yellow {
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                background-color: gray;
+                margin: 0;
+                margin-bottom: 30px;
+            }
+            #green,
+            #Green {
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                background-color: gray;
+                margin: 0;
+            }
+            h1 {
+                font-size: 80px;
+                color: white;
+                text-align: center;
+                margin: 0;
+                padding-top: 50px;
+            }
+            #knopka {
+                margin-top: 50px;
+                width: 200px;
+                height: 50px;
+                background-color: grey;
+                color: white;
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div id="trafficLightBlock">
+                <div id="red">
+                    <h1 id="redTimer"></h1>
+                </div>
+                <div id="yellow">
+                    <h1 id="yellowTimer"></h1>
+                </div>
+                <div id="green">
+                    <h1 id="greenTimer"></h1>
+                </div>
+            </div>
+            <div id="trafficLightPedestrian">
+                <div id="Red">
+                    <h1 id="RedTimer"></h1>
+                </div>
+                <div id="Green">
+                    <h1 id="GreenTimer"></h1>
+                </div>
+                <button id="knopka">Click to go</button>
+            </div>
+        </div>
+
+        <script>
+            const delay = (ms) =>
+                new Promise((ok) => setTimeout(() => ok(ms), ms));
+
+            async function timerShow(sec, id) {
+                for (sec; sec > 0; sec--) {
+                    id.innerHTML = sec;
+                    a = await delay(1000);
+                    id.innerHTML = "";
+                }
+            }
+
+            async function trafficLight() {
+                while (true) {
+                    // delay(1000).then(() => (document.getElementById("red").style.background = "red"))
+                    // delay(2000).then(() => (document.getElementById("red").style.background = "grey"))
+                    // delay(3000).then(() => (document.getElementById("yellow").style.background = "orange"))
+                    // delay(4000).then(() => (document.getElementById("yellow").style.background = "grey"))
+                    // delay(5000).then(() => (document.getElementById("green").style.background = "green"))
+                    // delay(6000).then(() => (document.getElementById("green").style.background = "grey"))
+
+                    let styleRed = (document.getElementById(
+                        "red"
+                    ).style.background = "red");
+
+                    timerShow(4, redTimer);
+
+                    var awaitRedGrey = await delay(5000);
+                    var styleGrey = (document.getElementById(
+                        "red"
+                    ).style.background = "grey");
+                    let styleYellow = (document.getElementById(
+                        "yellow"
+                    ).style.background = "yellow");
+
+                    var awaitRedGrey = await delay(2000);
+                    var styleGrey = (document.getElementById(
+                        "yellow"
+                    ).style.background = "grey");
+                    let styleGreen = (document.getElementById(
+                        "green"
+                    ).style.background = "green");
+
+                    timerShow(4, greenTimer);
+
+                    var awaitRedGrey = await delay(5000);
+                    var styleGrey = (document.getElementById(
+                        "green"
+                    ).style.background = "grey");
+                    let styleYelloww = (document.getElementById(
+                        "yellow"
+                    ).style.background = "orange");
+
+                    var awaitRedGrey = await delay(2000);
+                    var styleGrey = (document.getElementById(
+                        "yellow"
+                    ).style.background = "grey");
+                }
+            }
+
+            function domEventPromise(btn, eventName) {
+                return new Promise((resolve, reject) => {
+                    btn.addEventListener(eventName, (event) => {
+                        resolve(event);
+                    });
+                    btn.removeEventListener(eventName, (event) => {
+                        resolve(event);
+                    });
+                });
+            }
+
+            async function pedestrianTrafficLight() {
+                while (true) {
+                    if (true) {
+                        Red.style.background = "red";
+                        Green.style.background = "grey";
+                        knopka.disabled = true;
+                        await delay(3000);
+                        knopka.disabled = false;
+                        await Promise.race([
+                            delay(4000),
+                            domEventPromise(knopka, "click").then((e) =>
+                                console.log("event click happens", e)
+                            ),
+                        ]);
+                    }
+                    if (true) {
+                        knopka.disabled = true;
+                        Green.style.background = "green";
+                        Red.style.background = "grey";
+                        await delay(5000);
+                    }
+                }
+            }
+
+            trafficLight();
+            pedestrianTrafficLight();
+
+
+
+
+            async function speedtest(getPromise, count, parallel = 1) {
+                let duration = performance.now();
+                let initParallel = parallel;
+                let promisArray = [];
+                for (let i = 0; i < count; i++) {
+                    promisArray[i] = getPromise();
+                    parallel -= 1;
+                    await Promise.all(promisArray);
+                }
+
+                console.log(promisArray);
+
+                duration = performance.now() - duration;
+                console.log(duration);
+                console.log(initParallel * count);
+
+                return {
+                    duration: duration,
+                    querySpeed: count / duration,
+                    queryDuration: duration / count,
+                    parallelSpeed: (count / duration) * initParallel,
+                    parallelDuration: duration / (initParallel * count),
+                };
+            }
+
+            speedtest(() => delay(1000), 10, 10).then((result) =>
+                console.log(result)
+            );
+            speedtest(
+                () =>
+                    fetch("http://swapi.dev/api/people/1").then((res) =>
+                        res.json()
+                    ),
+                1,
+                2
+            );
+        </script>
+    </body>
+</html>

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Homework3</title>
+    </head>
+    <body>
+        <script>
+            let taskName = prompt("Введите название задания");
+            switch (taskName) {
+                case "switch: sizes":
+                    let clothingSizeIn = prompt(
+                        "Введите название страны, в размер которой вы хотите конвертировать свой размер. На выбор есть: Европа, Великобритания, США"
+                    );
+                    let userSize = prompt(
+                        "Введите свой размер обуви, который хотите конверитировать. От 40-45"
+                    );
+                    switch (clothingSizeIn) {
+                        case "США":
+                            switch (userSize) {
+                                case "40":
+                                    alert("8");
+                                    break;
+                                case "41":
+                                    alert("9");
+                                    break;
+                                case "42":
+                                    alert("9.5");
+                                    break;
+                                case "43":
+                                    alert("10");
+                                    break;
+                                case "44":
+                                    alert("11");
+                                    break;
+                                case "45":
+                                    alert("12");
+                                    break;
+                                default:
+                                    alert(
+                                        "Вы ввели неправильную информацию, обновите страницу и попробуйте ещё раз"
+                                    );
+                            }
+                            break;
+                        case "Великобритания":
+                            switch (userSize) {
+                                case "40":
+                                    alert("7.5");
+                                    break;
+                                case "41":
+                                    alert("8.5");
+                                    break;
+                                case "42":
+                                    alert("9");
+                                    break;
+                                case "43":
+                                    alert("9.5");
+                                    break;
+                                case "44":
+                                    alert("10.5");
+                                    break;
+                                case "45":
+                                    alert("11");
+                                    break;
+                                default:
+                                    alert(
+                                        "Вы ввели неправильную информацию, обновите страницу и попробуйте ещё раз"
+                                    );
+                            }
+                            break;
+                        case "Европа":
+                            switch (userSize) {
+                                case "40":
+                                    alert("41.5");
+                                    break;
+                                case "41":
+                                    alert("42.5");
+                                    break;
+                                case "42":
+                                    alert("43.5");
+                                    break;
+                                case "43":
+                                    alert("44.5");
+                                    break;
+                                case "44":
+                                    alert("45.5");
+                                    break;
+                                case "45":
+                                    alert("46.5");
+                                    break;
+                                default:
+                                    alert(
+                                        "Вы ввели неправильную информацию, обновите страницу и попробуйте ещё раз"
+                                    );
+                            }
+                            break;
+                    }
+                    break;
+                case "switch: if":
+                    let color = prompt("Введите цвет", "");
+                    if (color == "red") {
+                        document.write(
+                            "<div style='background-color: red;'>красный</div>",
+                            "<div style='background-color: black; color: white;'>черный</div>"
+                        );
+                    } else if (color == "black") {
+                        document.write(
+                            "<div style='background-color: black; color: white;'>черный</div>"
+                        );
+                    } else if (color == "blue") {
+                        document.write(
+                            "<div style='background-color: blue;'>синий</div>",
+                            "<div style='background-color: green;'>зеленый</div>"
+                        );
+                    } else if (color == "green") {
+                        document.write(
+                            "<div style='background-color: green;'>зеленый</div>"
+                        );
+                    } else {
+                        document.write(
+                            "<div style='background-color: gray;'>Я не понял</div>"
+                        );
+                    }
+                    break;
+                case "prompt: or":
+                    let aGe = +prompt("Введите свой возраст:");
+                    if (aGe) {
+                        alert("Вы родились в " + (2022 - aGe));
+                    } else if (aGe == null || aGe == "") {
+                        alert("Ошибка");
+                    } else {
+                        alert("Ошибка");
+                    }
+                    break;
+                case "or this days":
+                    let shoping1 = confirm("Шопинг?");
+                    alert(shoping1 || "Ты бяка!");
+                    break;
+                case "confirm: if this days":
+                    let shoping = confirm("Шопинг?");
+                    if (shoping) {
+                        alert("Let's go!");
+                    } else {
+                        alert("Ты бяка!");
+                    }
+                    break;
+                case "triple prompt":
+                    let userName1 = prompt("Введите ваше имя");
+                    let userSurname1 = prompt("Введите вашу фамилию");
+                    let userPatronymic1 = prompt("Введите ваше отчество");
+                    alert(
+                        userSurname1 + " " + userName1 + " " + userPatronymic1
+                    );
+                    break;
+                case "default: or":
+                    let userName2 = prompt("Введите ваше имя") || "Иван";
+                    let userSurname2 =
+                        prompt("Введите вашу фамилию") || "Иванов";
+                    let userPatronymic2 =
+                        prompt("Введите ваше отчество") || "Иванович";
+                    alert(
+                        userSurname2 + " " + userName2 + " " + userPatronymic2
+                    );
+                    break;
+                case "default: if":
+                    let userName3 = prompt("Введите ваше имя");
+                    let userSurname3 = prompt("Введите вашу фамилию");
+                    let userPatronymic3 = prompt("Введите ваше отчество");
+                    if (userName3 == null || " ") {
+                        userName3 = "Иван";
+                    }
+                    if (userSurname3 == null || " ") {
+                        userSurname3 = "Иванов";
+                    }
+                    if (userPatronymic3 == null || " ") {
+                        userPatronymic3 = "Иванович";
+                    }
+
+                    alert(
+                        userSurname3 + " " + userName3 + " " + userPatronymic3
+                    );
+                    break;
+                case "login and password":
+                    let login = prompt("Введите логин");
+                    if (login === "admin") {
+                        let password = prompt("Введите пароль");
+                        if (password === "qwerty") {
+                            alert("Поздравляю!");
+                        } else {
+                            alert("Ошибка");
+                        }
+                    } else {
+                        alert("Ошибка");
+                    }
+                    break;
+                case "currency calc":
+                    let userChoice1 = prompt(
+                        "В какую валюту хотите конвертировать? На выбор USD и EUR"
+                    );
+                    let UAH1 = +prompt("Введите вашу суму в гривнах");
+                    let USD1 = 29.2;
+                    let EUR1 = 31.4;
+                    switch (userChoice1) {
+                        case "USD":
+                            alert(UAH1 / USD1);
+                            break;
+                        case "EUR":
+                            alert(UAH1 / EUR1);
+                            break;
+                    }
+                    break;
+                case "currency calc: improved":
+                    let userChoice2 = prompt(
+                        "В какую валюту хотите конвертировать? На выбор USD и EUR"
+                    ).toLowerCase();
+                    let UAH2 = prompt("Введите вашу суму в гривнах");
+                    let usd = 29.2;
+                    let eur = 31.4;
+                    switch (userChoice2) {
+                        case "usd":
+                            alert(UAH2 / usd);
+                            break;
+                        case "eur":
+                            alert(UAH2 / eur);
+                            break;
+                    }
+                    break;
+                case "currency calc: two rates":
+                    let userChoice4 = prompt(
+                        "В какую валюту хотите конвертировать? На выбор USD и EUR"
+                    ).toLowerCase();
+                    let UAH6 = prompt("Введите вашу суму в гривнах");
+
+                    let usdPurchase1 = 29.2;
+                    let usdSale1 = 29.5;
+                    let eurPurchase1 = 31.4;
+                    let eurSale1 = 32.2;
+
+                    switch (userChoice4) {
+                        case "usd":
+                            let exchangeRateSelectionDollar = confirm(
+                                "Курс продажа или покупка? ок - покупка, Отмена - продажа"
+                            )
+                                ? UAH6 / usdPurchase1
+                                : UAH6 / usdSale1;
+                            alert(exchangeRateSelectionDollar);
+                            break;
+                        case "eur":
+                            let exchangeRateSelectionEuro = confirm(
+                                "Курс продажа или покупка? ок - покупка, Отмена - продажа"
+                            )
+                                ? UAH / eurPurchase1
+                                : UAH / eurSale1;
+                            alert(exchangeRateSelectionEuro);
+                            break;
+                    }
+                    break;
+                case "currency calc: if":
+                    let userChoice = prompt(
+                        "В какую валюту хотите конвертировать? На выбор USD и EUR"
+                    ).toLowerCase();
+                    let UAH = prompt("Введите вашу суму в гривнах");
+
+                    let usdPurchase = 29.2;
+                    let usdSale = 29.5;
+                    let eurPurchase = 31.4;
+                    let eurSale = 32.2;
+
+                    if (userChoice === "usd") {
+                        let exchangeRateSelectionDollar = confirm(
+                            "Курс продажа или покупка? ок - покупка, Отмена - продажа"
+                        )
+                            ? UAH / usdPurchase
+                            : UAH / usdSale;
+                        alert(exchangeRateSelectionDollar);
+                    } else if (userChoice === "eur") {
+                        let exchangeRateSelectionEuro = confirm(
+                            "Курс продажа или покупка? ок - покупка, Отмена - продажа"
+                        )
+                            ? UAH / eurPurchase
+                            : UAH / eurSale;
+                        alert(exchangeRateSelectionEuro);
+                    } else {
+                        alert("Ошибка");
+                    }
+                    break;
+                case "scissors":
+                    let userOption = prompt(
+                        "Введите камень, ножницы либо бумага"
+                    );
+                    if (userOption === "ножницы") {
+                        userOption = 1;
+                    } else if (userOption === "камень") {
+                        userOption = 2;
+                    } else if (userOption === "бумага") {
+                        userOption = 3;
+                    } else {
+                        alert("");
+                    }
+
+                    let randomТumber = Math.random() * 3;
+                    let randomTumberRound = Math.ceil(Math.round(randomТumber));
+
+                    if (randomTumberRound <= 1) {
+                        alert("Компьютер показывает Ножницы");
+                    } else if (randomTumberRound === 2) {
+                        alert("Компьютер показывает Камень");
+                    } else if (randomTumberRound === 3) {
+                        alert("Компьютер показывает Бумагу");
+                    } else {
+                        alert("");
+                    }
+
+                    if (randomTumberRound === 3 && userOption === 1) {
+                        alert("Поздравляю, вы выиграли!");
+                    } else if (
+                        userOption < randomTumberRound ||
+                        (randomTumberRound == 1 && userOption == 3)
+                    ) {
+                        alert("Выиграл компьютер!");
+                    } else if (userOption > randomTumberRound) {
+                        alert("Поздравляю, вы выиграли!");
+                    } else if (
+                        userOption === 1 &&
+                        (randomTumberRound === 1 || randomTumberRound === 0)
+                    ) {
+                        alert("Ничья!");
+                    }
+                    break;
+                case "Задание на синий пояс":
+                    let userCurrencySelection1 = prompt(
+                        "В какую валюту хотите конвертировать? На выбор USD и EUR"
+                    ).toLowerCase();
+                    let howManyHryvnias1 = prompt(
+                        "Введите сумму какую хотите конверировать в валюту"
+                    );
+                    let ratios = {
+                        usd: "25.6",
+                        eur: "29",
+                    };
+
+                    if (userCurrencySelection1 === "usd") {
+                        alert(howManyHryvnias1 / ratios["usd"]);
+                    } else if (userCurrencySelection1 === "eur") {
+                        alert(howManyHryvnias1 / ratios["eur"]);
+                    } else {
+                        alert("Ошибка");
+                    }
+                    break;
+                case "real data":
+                    let userCurrencySelection = prompt(
+                        "В какую валюту хотите конвертировать? На выбор USD и EUR"
+                    ).toLowerCase();
+                    let howManyHryvnias = prompt(
+                        "Введите сумму какую хотите конверировать в валюту"
+                    );
+                    if (userCurrencySelection === "usd") {
+                        fetch("https://open.er-api.com/v6/latest/USD")
+                            .then((res) => res.json())
+                            .then((data) => {
+                                alert(howManyHryvnias / data.rates.UAH);
+                            });
+                    } else if (userCurrencySelection === "eur") {
+                        fetch("https://open.er-api.com/v6/latest/EUR")
+                            .then((res) => res.json())
+                            .then((data) => {
+                                alert(howManyHryvnias / data.rates.UAH);
+                            });
+                    } else {
+                        alert("Ошибка");
+                    }
+                    break;
+            }
+        </script>
+    </body>
+</html>

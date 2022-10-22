@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "react-dropzone": "^14.2.2",
+    "react-lettered-avatar": "^1.0.2",
+    "reactjs-popup": "^2.0.5"
+  }
+}

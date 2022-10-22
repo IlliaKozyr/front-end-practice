@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>GraphQL</title>
+        <style></style>
+    </head>
+    <body>
+        <script>
+            const backendURL = "http://shop-roles.node.ed.asmer.org.ua/graphql";
+
+            let gql = (url, query, variables = {}) =>
+                fetch(url, {
+                    method: "POST",
+                    headers: {
+                        Accept: "application/json",
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({ query, variables }),
+                }).then((res) => res.json());
+
+            const categoryFind = () =>
+                gql(
+                    backendURL,
+                    `
+                    query catz{
+                        CategoryFind(query:"[{}]") {
+                            name
+                        }
+                    }
+                    `
+                );
+
+            const registerUser = (login, password) =>
+                gql(
+                    backendURL,
+                    `
+                    mutation register($login:String, $password:String){
+                        UserUpsert(user: {login:$login, password:$password}){
+                            _id login createdAt
+                        }
+                    }
+                `,
+                    { login, password }
+                );
+
+            const login = (login, password) =>
+                gql(
+                    backendURL,
+                    `
+                    query login($login:String, $password:String){
+                        login(login:$login, password:$password)
+                    }
+                `,
+                    { login, password }
+                );
+
+            const categories = () =>
+                gql(
+                    backendURL,
+                    `
+                        query categoryFind{
+                            CategoryFind(query:"[{}]"){
+                            _id name goods {
+                                _id
+                                createdAt
+                                name
+                                description
+                                price
+                            }
+                        }
+                    }`
+                );
+
+            const productSearchByIdImgDiscr = (id) => {
+                let a = `\\"_id\\":\\"${id}\\"`;
+                return gql(
+                    backendURL,
+                    `
+                    query searchId{
+                            GoodFind(query:"[{${a}}]"){
+                                name description images {
+                                  _id
+                                  createdAt
+                                  text
+                                  url
+                                  originalFileName
+                                }
+                            }
+                        }`
+                );
+                
+            };
+
+            (async () => {
+                console.log("all category:", await categoryFind());
+                console.log(
+                    "register user:",
+                    await registerUser("illiaKozyr", "qwerty123456")
+                );
+                console.log(
+                    "user login:",
+                    await login("illiaKozyr", "qwerty123456")
+                );
+                console.log(
+                    "category by id with products:",
+                    await categories()
+                );
+                console.log(
+                    "product search by id:",
+                    await productSearchByIdImgDiscr("62c9472cb74e1f5f2ec1a0d3")
+                );
+            })();
+        </script>
+    </body>
+</html>

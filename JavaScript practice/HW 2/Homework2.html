@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // --------------assign: evaluation
+
+            // var a = 5;
+            // var b, c;
+
+            // b = a * 5;
+            // b = c = b / 2;
+
+            // --------------semicolon: error
+
+            // if (a = 5) {
+            //     concole.log("Ты молодец")
+            // } else {
+            //     concole.log("Ты не молодец")
+            // }
+
+            // ----------------semicolon: mistake
+
+            // b = a * 5; -2;
+            // c = b - 2; +5;
+            // console.log(c, b);
+
+            // ----------------Number: age
+
+            // let aGe = prompt("Введите свой возраст:");
+            // alert(
+            //     2022 - aGe + " Ваш год рождения, наверное, ну плюс минус год"
+            // );
+
+            // ----------------Number: temperature
+
+            // let temperatureInCelsius = prompt('Введите температуру которую хотите конвертировать в Фарангейты:');
+            // let temperatureInFahrenheit = (temperatureInCelsius * (9/5)) + 32;
+            // alert(temperatureInFahrenheit + " градусов по Фарангейту");
+
+            // ----------------Number: divide
+
+            // let integerDivision1 = prompt("Введите первое число");
+            // let integerDivision2 = prompt("Введите второе число");
+            // let divisionOfTwoNumbers = Math.floor(integerDivision1 / integerDivision2);
+
+            // alert(divisionOfTwoNumbers);
+
+            // ----------------Number: odd  Нужно доднлать
+
+            // let numberFromUser = prompt("Введите ваше число;");
+            // if (numberFromUser == +numberFromUser) {
+            //     if (numberFromUser % 2 == 0) {
+            //         alert("Ты молодец, ввёл чётное число!");
+            //     } else {
+            //         alert("Ты ввёл нечётное число!")
+            //     }
+
+            // } else {
+            //     alert("Ты не молодец, вывожу тебе ошибку!")
+            // }
+
+            // ------------------String: greeting
+
+            // let userName = prompt("Как вас зовут?")
+            // alert(userName + ", приветствую вас!")
+
+            // ------------------String: lexics
+
+            // let userText = prompt('Введите какой-нибудь текст:');
+            // let includesUserText = userText.includes('какой-нибудь текст');
+            // if (includesUserText) {
+            //     alert ("ха-ха-ха, молодец шаришь!")
+            // } else {
+            //     alert ("Обнови страницу и введи какой-нибудь текст!")
+            // }
+
+            // -------------------confirm
+
+            // let userСhoice = confirm("Выбери красную либо синюю таблетку! Красная - Отмена, синяя - ОК")
+            // if(userСhoice != true) {
+            //     alert('Ты хреновый программист!')
+            // } else {
+            //     alert('Ты сможешь научится писать код сложнее IF ELSE')
+            // }
+
+            // -------------------Boolean
+
+            // let userAge = confirm('Вам больше 18?');
+            // let question = confirm("Да или нет?");
+            // let userGender = confirm("Вы женщина?");
+
+            // -------------------Boolean: if
+
+            // if (userGender) {
+            //     let woman = 'Вы женщина получается!';
+            //     alert (woman);
+            // } else {
+            //     let male = 'Вы не женщина. Тогда скорее всего мужчина';
+            //     alert (male);
+            // }
+
+            // --------------------Array: real
+
+            // --------------------Array: booleans
+
+            // let questionsToTheUsers = [userAge, question, userGender];
+
+            // --------------------Array: plus
+
+            // let arrayOfNumbers = [1, 2, 3, 4, 5];
+            // arrayOfNumbers[2] = arrayOfNumbers[3] + arrayOfNumbers[4];
+            // console.log(arrayOfNumbers);
+
+            // --------------------Array: plus string
+
+            // let arrayOfString = ["one", "two", "three", "four", "five"];
+            // arrayOfString[2] = arrayOfString[0] + arrayOfString[1] + arrayOfString[3];
+            // console.log(arrayOfString);
+
+            // --------------------Object: real
+
+            // let object = {
+            //     name: "Bitcoin",
+            //     price: "29538 dollars for 1 bitcoin",
+            //     capitalization: "685 million"
+            // };
+
+            // --------------------Object: change
+
+            // let object = {
+            //     name: "Bitcoin",
+            //     price: "29538 dollars for 1 bitcoin",
+            //     capitalization: "685 million"
+            // };
+
+            // object.price = "30000 dollars for 1 bitcoin";
+            // object["capitalization"] = "700 million dollars";
+
+            // --------------------Comparison if
+            var age = +prompt("Сколько вам лет?", "");
+            if (age < 0) {
+                alert("ещё не родился");
+            } else {
+                if (age <= 18) {
+                    alert("школьник");
+                } else {
+                    if (age <= 30) {
+                        alert("молодеж");
+                    } else {
+                        if (age <= 45) {
+                            alert("зрелость");
+                        } else {
+                            if (age <= 60) {
+                                alert("закат");
+                            } else {
+                                if (age > 60) {
+                                    alert("как пенсия?");
+                                } else {
+                                    alert("то ли киборг, то ли KERNESS");
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            // --------------------Comparison: sizes
+
+            // let clothingSizeIn = prompt(
+            //     "Введите название страны, в размер которой вы хотите конвертировать свой размер. На выбор есть: Европа, Великобритания, США"
+            // );
+            // let userSize = prompt(
+            //     "Введите свой размер обуви, который хотите конверитировать. От 40-45"
+            // );
+
+            // let _40 = userSize.includes("40");
+            // let _41 = userSize.includes("41");
+            // let _42 = userSize.includes("42");
+            // let _43 = userSize.includes("43");
+            // let _44 = userSize.includes("44");
+            // let _45 = userSize.includes("45");
+
+            // let europe = clothingSizeIn.includes("Европа");
+            // let british = clothingSizeIn.includes("Великобритания");
+            // let usa = clothingSizeIn.includes("США");
+
+            // if (europe) {
+            //     if (_40) {
+            //         alert("41.5");
+            //     } else if (_41 == true) {
+            //         alert("42.5");
+            //     } else if (_42 == true) {
+            //         alert("43.5");
+            //     } else if (_43 == true) {
+            //         alert("44.5");
+            //     } else if (_44 == true) {
+            //         alert("45.5");
+            //     } else if (_45 == true) {
+            //         alert("46.5");
+            //     }
+            // } else {
+            // if (british) {
+            //     if (_40) {
+            //         alert("7.5");
+            //     } else if (_41) {
+            //         alert("8.5");
+            //     } else if (_42) {
+            //         alert("9");
+            //     } else if (_43) {
+            //         alert("9.5");
+            //     } else if (_44) {
+            //         alert("10.5");
+            //     } else if (_45) {
+            //         alert("11.5");
+            //     }
+            // } else {
+            //         if (usa) {
+            //             if (_40) {
+            //             alert("8");
+            //         } else if (_41) {
+            //             alert("9");
+            //         } else if (_42) {
+            //             alert("9.5");
+            //         } else if (_43) {
+            //             alert("10");
+            //         } else if (_44) {
+            //             alert("11");
+            //         } else if (_45) {
+            //             alert("12");
+            //         }
+            //         }
+            //     }
+            // }
+
+            // --------------------Comparison: object
+            // --------------------Ternary
+
+            // let genderUser = confirm("Вы мужчина?") ? "Я конечно вам не особо верю, но вы скорее всего мужчина!" : "Ну тогда вы женщина!";
+            // alert(genderUser);
+
+            // --------------------Синий пояс Number: flats
+
+            let numberApartments = prompt("Введите номер квартиры");
+            let numberOfFloorsInTheHouse = prompt(
+                "Введите количество этажей в доме"
+            );
+            let numberOfApartmentsPerFloor = prompt(
+                "Введите количество квартир на этаже"
+            );
+            let apartmentsInTheHallway =
+                numberOfFloorsInTheHouse * numberOfApartmentsPerFloor;
+            let entranceOfThisApartmentNumber =
+                (numberApartments - 1) / apartmentsInTheHallway + 1;
+            let floorOfTheApartmentByItsNumber =
+                ((numberApartments - 1) % apartmentsInTheHallway) /
+                    numberOfApartmentsPerFloor +
+                1;
+            alert(
+                Math.floor(entranceOfThisApartmentNumber) +
+                    " подьезд" +
+                    " " +
+                    Math.floor(floorOfTheApartmentByItsNumber) +
+                    " этаж"
+            );
+        </script>
+    </body>
+</html>

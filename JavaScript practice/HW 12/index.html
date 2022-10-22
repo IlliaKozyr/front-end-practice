@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <script>
+//-------------------fetch basic
+
+// let DOM = document.body;
+// fetch('https://swapi.py4e.com/api/people/1/')
+//   .then(res => res.json(),
+//         err => console.log("ERROR"))
+//     .then(luke => createTable(DOM, luke));
+
+// function createTable(DOM, JSON) {
+//     console.log(DOM, JSON);
+//     const tableEl = document.createElement("table");
+//     tableEl.border = 1;
+
+//     for(let [key, value] of Object.entries(JSON)) {
+//         createTr(key,value);
+//     }
+
+//     DOM.append(tableEl);
+
+//     function createTr(td1,td2) {
+//         const trEl = document.createElement("tr");
+//         const td1El = document.createElement("td");
+//         const td2El = document.createElement("td");
+//         td1El.innerHTML = td1;
+//         if(typeof td2 ==="object") {
+//             const ulEl = document.createElement("ul");
+//             for(let value of td2) {
+//                 const liEl = document.createElement("li");
+//                 liEl.innerText = value;
+//                 ulEl.appendChild(liEl);
+//             }
+//             td2El.appendChild(ulEl);
+//         } else {
+//             td2El.innerHTML = td2;  
+//         }
+//         trEl.append(td1El,td2El);
+//         tableEl.append(trEl);
+//     }
+
+// }
+
+//-------------------fetch improved
+// let DOM = document.body;
+// myFetch(DOM);
+
+// function myFetch(dom) {
+// fetch('https://swapi.py4e.com/api/people/1/')
+//   .then(res => res.json(),
+//         err => console.log("ERROR"))
+//     .then(luke => createTable(dom, luke));
+// }
+
+// function createTable(DOM, JSON) {
+//     console.log(DOM, JSON);
+//     const tableEl = document.createElement("table");
+//     tableEl.border = 1;
+//     for(let [key, value] of Object.entries(JSON)) {
+//         createTr(key,value);
+//     }
+//     DOM.append(tableEl);
+
+//     function createTr(td1,td2) {
+//         const trEl = document.createElement("tr");
+//         const td1El = document.createElement("td");
+//         const td2El = document.createElement("td");
+//         td1El.innerHTML = td1;
+//         if(typeof td2 ==="number") td2 = td2.toString();
+//         if(typeof td2!=="object"&&!td2.indexOf("https://swapi.py4e.com/api/")) td2 = [td2];
+//         if(typeof td2 ==="object") {
+//             const ulEl = document.createElement("ul");
+//             for(let value of td2) {
+//                 const liEl = document.createElement("li");
+//                 const buttonEl = document.createElement("button");
+//                 buttonEl.innerText = value;
+//                 buttonEl.onclick = () => {
+//                     buttonEl.hidden = true;
+//                     myFetch(buttonEl.parentElement);
+//                 }
+//                 liEl.appendChild(buttonEl);
+//                 ulEl.appendChild(liEl);
+//             }
+//             td2El.appendChild(ulEl);
+//         } else {
+//             td2El.innerHTML = td2;
+//         }
+//         trEl.append(td1El,td2El);
+//         tableEl.append(trEl);
+//     }
+// }
+//-------------------myfetch
+
+// myfetch('https://swapi.py4e.com/api/people/1/').then(luke => console.log(luke));
+
+// function myfetch(url){
+//     return new Promise(function (resolve, reject){
+//         const xhr = new XMLHttpRequest();
+//         xhr.open('GET', url, true);
+//         xhr.responseType = "json";
+//         xhr.onload = function(){
+//             if (xhr.status == 200){
+//                 resolve(xhr.response);
+//             }
+//             else {
+//                 reject(`ERROR ${xhr.status} - ${xhr.statusText}`);
+//             }
+//         }
+//         xhr.onerror = () => reject(`ERROR ${xhr.status} - ${xhr.statusText}`);
+//         xhr.send();
+//     })
+// }
+//-------------------race
+
+Promise.race([myfetch('https://swapi.py4e.com/api/people/1/'),delay(30)]).then((value) => console.log(value));
+
+
+function myfetch(url){
+    return new Promise(function (resolve, reject){
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', url, true);
+        xhr.responseType = "json";
+        xhr.onload = function(){
+            if (xhr.status == 200){
+                resolve(xhr.response);
+            }
+            else {
+                reject(`ERROR ${xhr.status} - ${xhr.statusText}`);
+            }
+        }
+        xhr.onerror = () => reject(`ERROR ${xhr.status} - ${xhr.statusText}`);
+        xhr.send();
+    })
+}
+
+function delay(ms) {
+    return new Promise(function(resolve,reject) {
+        setTimeout(resolve,ms,"delay");
+    })
+}
+    </script>
+</body>
+</html>

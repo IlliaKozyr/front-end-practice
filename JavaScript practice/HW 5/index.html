@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // -------------------3 persons
+
+            // let a = {
+            //     name: "Andrey",
+            //     surname: "Petroff"
+            // }
+
+            // let b = {
+            //     name: "Anton",
+            //     surname: "Nikitin"
+            // }
+
+            // let c = {
+            //     name: "Artem",
+            //     surname: "Kozyr"
+            // }
+
+            // -------------------different fields
+
+            // let a = {
+            //     name: "Andrey,
+            //     surname: "Petroff",
+            //     age: "100",
+            //     fathername: "Akakiyovich",
+            //     sex: "Male"
+            // }
+
+            // let b = {
+            //     name: "Anton",
+            //     surname: "Nikitin",
+            //     age: "23",
+            //     fathername: "Ronaldovich",
+
+            // }
+
+            // let c = {
+            //     name: "Artem",
+            //     surname: "Kozyr",
+            //     fathername: "Messiyovich"
+            // }
+
+            // -------------------fields check
+
+            // let a = {
+            //     name: "Andrey",
+            //     surname: "Petroff",
+            //     sex: "Male",
+            //     age: "100",
+            //     fathername: "Akakiyovich",
+            // };
+
+            // let b = {
+            //     name: "Anton",
+            //     surname: "Nikitin",
+            //     age: "23",
+            //     fathername: "Ronaldovich",
+            // };
+
+            // let c = {
+            //     name: "Artem",
+            //     surname: "Kozyr",
+            //     fathername: "Messiyovich",
+            // };
+
+            // if  ("age" in a) {
+            //     alert(a.age);
+            // } if ("sex" in a){
+            //     alert(a.sex);
+            // } if ("age" in b) {
+            //     alert(b.age);
+            // } if ("sex" in b){
+            //     alert(b.sex);
+            // } if  ("age" in c) {
+            //     alert(c.age);
+            // } if ("sex" in c){
+            //     alert(c.sex);
+            // }
+
+            // -------------------array of persons
+
+            // var persons = [
+            //     (a = {
+            //         name: "Andrey",
+            //         surname: "Petroff",
+            //         sex: "Male",
+            //         age: "100",
+            //         fathername: "Akakiyovich",
+            //     }),
+            //     (b = {
+            //         name: "Anton",
+            //         surname: "Nikitin",
+            //         age: "23",
+            //         fathername: "Ronaldovich",
+            //     }),
+            //     (c = {
+            //         name: "Artem",
+            //         surname: "Kozyr",
+            //         fathername: "Messiyovich",
+            //     }),
+            //     (d = {
+            //         "name": "Illia",
+            //         "surname": "Kozyr",
+            //         "fathername": "Sergeevych",
+            //     }),
+            // ];
+
+            // -------------------loop of persons
+
+            // var persons = [
+            //     (a = {
+            //         name: "Andrey",
+            //         surname: "Petroff",
+            //         sex: "Male",
+            //         age: "100",
+            //         fathername: "Akakiyovich",
+            //     }),
+            //     (b = {
+            //         name: "Anton",
+            //         surname: "Nikitin",
+            //         age: "23",
+            //         fathername: "Ronaldovich",
+            //     }),
+            //     (c = {
+            //         name: "Artem",
+            //         surname: "Kozyr",
+            //         fathername: "Messiyovich",
+            //     }),
+            //     (d = {
+            //         "name": "Illia",
+            //         "surname": "Kozyr",
+            //         "fathername": "Sergeevych",
+            //     }),
+            // ];
+
+            // var index;
+            // for (index = 0; index < persons.length; ++index) {
+            //     console.log(persons[index])
+            // }
+
+            // -------------------loop of name and surname
+
+            // var persons = [
+            //     (a = {
+            //         name: "Andrey",
+            //         surname: "Petroff",
+            //         sex: "Male",
+            //         age: "100",
+            //         fathername: "Akakiyovich",
+            //     }),
+            //     (b = {
+            //         name: "Anton",
+            //         surname: "Nikitin",
+            //         age: "23",
+            //         fathername: "Ronaldovich",
+            //     }),
+            //     (c = {
+            //         name: "Artem",
+            //         surname: "Kozyr",
+            //         fathername: "Messiyovich",
+            //     }),
+            //     (d = {
+            //         "name": "Illia",
+            //         "surname": "Kozyr",
+            //         "fathername": "Sergeevych",
+            //     }),
+            // ];
+
+            // var index;
+            // for (index = 0; index < persons.length; ++index) {
+            //     console.log(persons[index].name + " " + persons[index].surname);
+            // }
+
+            // -------------------loop of loop of values
+
+            // var persons = [
+            //     (a = {
+            //         name: "Andrey",
+            //         surname: "Petroff",
+            //         sex: "Male",
+            //         age: "100",
+            //         fathername: "Akakiyovich",
+            //     }),
+            //     (b = {
+            //         name: "Anton",
+            //         surname: "Nikitin",
+            //         age: "23",
+            //         fathername: "Ronaldovich",
+            //     }),
+            //     (c = {
+            //         name: "Artem",
+            //         surname: "Kozyr",
+            //         fathername: "Messiyovich",
+            //     }),
+            //     (d = {
+            //         name: "Illia",
+            //         surname: "Kozyr",
+            //         fathername: "Sergeevych",
+            //     }),
+            // ];
+
+            // for (let index = 0; index < persons.length; index++) {
+            //     for (let key in persons[index]) {
+            //         console.log(persons[index][key]);
+            //     }
+            // }
+
+            // -------------------fullName
+
+            // var persons = [
+            //     (a = {
+            //         name: "Andrey",
+            //         surname: "Petroff",
+            //         sex: "Male",
+            //         fathername: "Akakiyovich",
+            //     }),
+            //     (b = {
+            //         name: "Anton",
+            //         surname: "Nikitin",
+            //         age: "23",
+            //         fathername: "Ronaldovich",
+            //     }),
+            //     (c = {
+            //         name: "Artem",
+            //         surname: "Kozyr",
+            //         fathername: "Messiyovich",
+            //     }),
+            //     (d = {
+            //         name: "Illia",
+            //         surname: "Kozyr",
+            //         fathername: "Sergeevych",
+            //     }),
+            // ];
+
+            // for (let object of persons) {
+            //     if (object.name && object.surname) {
+            //         object.fullName = object.name + " " + object.surname;
+            //     }
+            // }
+            // console.log(persons);
+
+            // -------------------serialize
+
+            // console.log(JSON.stringify(persons));
+
+            // -------------------deserialize
+
+            // const obj = JSON.parse('d: {"name":"John", "surname": "Ivanoff", "city" : "New York"}');
+            // let resoultObject = Object.assign(persons, obj);
+            // console.log(resoultObject)
+
+            // -------------------HTML
+
+            // var persons = [
+            //     (a = {
+            //         name: "Andrey",
+            //         surname: "Petroff",
+
+            //     }),
+            //     (b = {
+            //         name: "Anton",
+            //         surname: "Nikitin",
+
+            //     }),
+            //     (c = {
+            //         name: "Artem",
+            //         surname: "Kozyr",
+
+            //     }),
+            //     (d = {
+            //         name: "Illia",
+            //         surname: "Kozyr",
+
+            //     }),
+            // ];
+
+            // var str = "<table border='1'>";
+            // for (let i = 0; i < 4; i++) {
+            //     for (let key in persons[i]) {
+            //         str += `<tr><td>${[key]}</td><td>${persons[i][key]}</td></tr>`;
+            //     }
+
+            // }
+            // str += "</table>";
+            // console.log(str);
+            // document.write(str);
+
+            // ---------------HTML optional fields
+
+            // var persons = [
+            //     (a = {
+            //         name: "Andrey",
+            //         surname: "Petroff",
+            //         sex: "Male",
+            //         fathername: "Akakiyovich",
+            //     }),
+            //     (b = {
+            //         name: "Anton",
+            //         surname: "Nikitin",
+            //         age: "23",
+            //         fathername: "Ronaldovich",
+            //     }),
+            //     (c = {
+            //         name: "Artem",
+            //         surname: "Kozyr",
+            //         fathername: "Messiyovich",
+            //     }),
+            //     (d = {
+            //         name: "Illia",
+            //         surname: "Kozyr",
+            //         fathername: "Sergeevych",
+            //     }),
+            // ];
+
+            // var str = "<table border='1'>";
+            // for (let i = 0; i < 4; i++) {
+            //     for (let key in persons[i]) {
+            //         str += `<tr><td>${[key]}</td><td>${persons[i][key]}</td></tr>`;
+            //     }
+
+            // }
+            // str += "</table>";
+            // console.log(str);
+            // document.write(str);
+
+            // -------------------HTML tr color
+
+            var persons = [
+                (a = {
+                    name: "Andrey",
+                    surname: "Petroff",
+                    sex: "Male",
+                    fathername: "Akakiyovich",
+                }),
+                (b = {
+                    name: "Anton",
+                    surname: "Nikitin",
+                    age: "23",
+                    fathername: "Ronaldovich",
+                }),
+                (c = {
+                    name: "Artem",
+                    surname: "Kozyr",
+                    fathername: "Messiyovich",
+                }),
+                (d = {
+                    name: "Illia",
+                    surname: "Kozyr",
+                    fathername: "Sergeevych",
+                }),
+            ];
+
+            var str = "<table border='1'>";
+            for (let i = 0; i < 4; i++) {
+                for (let key in persons[i]) {
+                    str += `<tr style="color: red;><td>${[key]}</td><td>${
+                        persons[i][key]
+                    }</td></tr>`;
+                }
+            }
+            str += "</table>";
+            console.log(str);
+            document.write(str);
+            
+
+            // -------------------destruct array
+
+            // let arr = [1,2,3,4,5, "a", "b", "c"]
+            // let [odd1=1%2, even1, odd2, even2, odd3, ...arrr] = [1,2,3,4,5, "a", "b", "c"];
+
+            //--------------------destruct string
+
+            // let arr = [1, "abc"];
+            // let [number, [s1, s2, s3]] = arr;
+
+            // --------------------destruct 2
+
+            // let obj = {
+            //     name: "Ivan",
+            //     surname: "Petrov",
+            //     children: [{ name: "Maria" }, { name: "Nikolay" }],
+            // };
+
+            // let {
+            //     children: [{ name: name1 }, { name: name2 }],
+            // } = obj;
+
+            // --------------------destruct 3
+
+            let arr = [1,2,3,4, 5,6,7,10]
+
+            let [a, b, {length = arr.length}] = arr;
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div id='container1'></div>
+        <div id='formContainer'></div>
+    </body>
+        <script>
+            //---------------------------------------Password
+            function Password(parent, open) {
+                let passField = document.createElement("input");
+                passField.placeholder = "введите пароль";
+                let checkBox = document.createElement("input");
+                checkBox.setAttribute("type", "checkbox");
+                parent.append(passField, checkBox);
+
+                this.setValue = (newValue) => {
+                    passField.value = newValue;
+                };
+                this.getValue = () => passField.value;
+
+                this.setOpen = (newOpen) => {
+                    open = newOpen;
+                    if (open === true) {
+                        checkBox.setAttribute("checked", "true");
+                        passField.setAttribute("type", "text");
+                    } else if (open === false) {
+                        checkBox.setAttribute("checked", "false");
+                        passField.setAttribute("type", "password");
+                    }
+                };
+                this.setOpen(open);
+                this.getOpen = () => checkBox.checked;
+
+                passField.oninput = () => {
+                    if (typeof this.onChange === "function") {
+                        this.onChange(this.getValue());
+                    }
+                };
+
+                checkBox.oninput = () => {
+                    if (this.getOpen() === true) {
+                        this.setOpen(true);
+                    } else {
+                        this.setOpen(false);
+                    }
+                    if (typeof this.onOpenChange === "function") {
+                        this.onOpenChange(this.getOpen());
+                    }
+                };
+            }
+            // let p = new Password(document.body, true);
+            // p.onchange = (data) => console.log(data);
+            // p.onopenchange = (open) => console.log(open);
+            // p.setValue("qwerty");
+            // console.log(p.getValue());
+            // p.setOpen(false);
+            // console.log(p.getOpen());
+
+            // //---------------------------------------LoginForm
+            //     let passwordInput = new Password(document.body, true)
+            //     let loginInput = document.createElement('input')
+            //     let loginButton = document.createElement('input')
+            //     loginInput.placeholder = 'введите логин'
+            //     loginButton.type = 'button'
+            //     loginButton.value = 'Войти'
+            //     loginButton.disabled = true
+            //     loginInput.setAttribute('oninput','f()')
+            //     formContainer.append(loginInput,loginButton)
+            //     passwordInput.onChange = data => console.log(data)
+            
+            // function f(){
+            //     if ((loginInput.value === '' ) || (passwordInput.getValue() === '')) {
+            //     loginButton.disabled=true
+            // } else
+            //      loginButton.disabled=false
+            // }
+            // passwordInput.onChange = f
+
+            // //---------------------------------------LoginForm constructor
+            // function Login(parent) {
+            //     this.parent = parent;
+            //     let login = document.createElement('input')
+            //     login.placeholder = 'введите логин'
+            //     let button = document.createElement('button')
+            //     button.innerText = 'Войти'
+            //     button.disabled = true
+            //     let password = new Password(this.parent, true);
+            //     parent.append(login,button)
+            
+            
+            //     this.setActive = (value) => {
+            //         if (value === true) {
+            //             button.disabled = true;
+            //         } else {
+            //             button.disabled = false;
+            //         }
+            //     }
+
+            //     this.getPassword = () => {
+            //         return this.passwordInput
+            //     }
+            
+            //     password.onChange = (data) => {
+            //         if(login.value === '' || data === '' ) {
+            //             this.setActive(true)
+            //         } else {
+            //             this.setActive(false)
+            //         }
+            //     }
+            
+            //     login.oninput = () => {
+            //         login.innerHTML = login.value;
+            //         console.log(login.value)
+            //         if(login.value === '') {
+            //             this.setActive(true)
+            //         } else {
+            //             this.setActive(false)
+            //         }
+            //     }
+            // }
+            // let login = new Login(formContainer)
+
+            //---------------------------------------Password verify
+            let p = new Password(formContainer, true)
+            let p2 = document.createElement('input')
+            p2.type = 'password'
+            p2.style.display = 'none'
+            p2.placeholder = 'повторите пароль'
+            p2.setAttribute('oninput','f()')
+            let button = document.createElement('button')
+            button.innerText = 'Войти'
+            button.disabled = true
+            p.onChange = data => console.log(data)
+            
+            formContainer.append(p2,button)
+            
+            function f () {
+                if (p.getOpen() === true) {
+                    p2.style.display = 'none'
+            
+                    if (p.getValue() != '') {
+                        button.disabled = false
+                    } else {button.disabled = true}
+            
+                } else {
+                    if (p.getValue() != '' && (p.getValue() === p2.value)) {
+                        button.disabled = false
+                    } else {button.disabled = true}
+                    p2.style.display = ''}
+            }
+            p.onOpenChange = f
+            p.onChange = f
+            console.log(p.getValue())
+        </script>
+    </body>
+</html>

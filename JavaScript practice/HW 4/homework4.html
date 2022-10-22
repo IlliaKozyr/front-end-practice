@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Homework 4</title>
+    </head>
+    <body>
+        <table width="100%" border="1" cellspacing="0" cellpadding="4">
+            <caption>
+                Таблица Пифагора
+            </caption>
+            <tr>
+                <th></th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+                <th>8</th>
+                <th>9</th>
+                <th>10</th>
+            </tr>
+        </table>
+        <script>
+            // -------------------------html tree
+            // let body = {
+            //     tagName: "body",
+            //     subTags: [
+            //         {
+            //             tagName: "div",
+            //             subTags: [
+            //                 {
+            //                     tagName: "span",
+            //                     text: "Enter a data please:",
+            //                 },
+            //                 {
+            //                     tagName: "br",
+            //                 },
+            //                 {
+            //                     tagName: "input",
+            //                     attrs: {
+            //                         type: "text",
+            //                         id: "name",
+            //                     },
+            //                 },
+            //                 {
+            //                     tagName: "input",
+            //                     attrs: {
+            //                         type: "text",
+            //                         id: "surname",
+            //                     },
+            //                 },
+            //             ],
+            //         },
+            //         {
+            //             tagName: "div",
+            //             subTags: [
+            //                 {
+            //                     tagName: "buttom",
+            //                     text: "OK",
+            //                     attrs: {
+            //                         id: "ok",
+            //                     },
+            //                 },
+            //                 {
+            //                     tagName: "buttom",
+            //                     text: "Cancel",
+            //                     attrs: {
+            //                         id: "cancel",
+            //                     },
+            //                 },
+            //             ],
+            //         },
+            //     ],
+            // };
+
+            // console.log(body.subTags[1].subTags[1].text);
+            // console.log(body.subTags[0].subTags[3].attrs.id);
+
+            // -------------------------declarative fields
+
+            // var notebook = {
+            //     brand: prompt('Какая модель ноутбука?'),
+            //     type:  prompt("Какая модель нотбука?"),
+            //     model: prompt("Введите серийный номер"),
+            //     ram: prompt("Введите оперативную память"),
+            //     size: +prompt("Сколько дюймов экран?"),
+            //     weight: +prompt("какой вес вашей модели?"),
+            //     resolution: {
+            //             width: prompt("Какая ширина экрана?"),
+            //             height: prompt("Какая высота экрана?"),
+            //      },
+            // };
+
+            // var phone = {
+            //     brand: prompt("Введите производителя телефона"),
+            //     model: prompt("введите модель телефона"),
+            //     ram: +prompt("Сколько оперативной памяти в вашем телефоне?"),
+            //     color: prompt("Какой цвет вашего телефона?"),
+            // };
+
+            // var person = {
+            //     name: prompt("Введите имя"),
+            //     surname: prompt("Введите фамилию"),
+            //     married: confirm("Вы замужем либо женаты?"),
+            // };
+
+            // -------------------------object links
+            
+            // var person = {
+            //     name: prompt("Введите имя"),
+            //     surname: prompt("Введите фамилию"),
+            //     married: confirm("Вы замужем либо женаты?"),
+            //     smartphone: phone,
+            //     laptop: notebook,
+            // };
+
+            // var notebook = {
+            //     brand: prompt("Какая модель ноутбука?"),
+            //     type: prompt("Какая модель нотбука?"),
+            //     model: prompt("Введите серийный номер"),
+            //     ram: prompt("Введите оперативную память"),
+            //     size: +prompt("Сколько дюймов экран?"),
+            //     weight: +prompt("какой вес вашей модели?"),
+            //     resolution: {
+            //         width: prompt("Какая ширина экрана?"),
+            //         height: prompt("Какая высота экрана?"),
+            //     },
+            //     owner: person,
+            // };
+
+            // var phone = {
+            //     brand: prompt("Введите производителя телефона"),
+            //     model: prompt("введите модель телефона"),
+            //     ram: +prompt("Сколько оперативной памяти в вашем телефоне?"),
+            //     color: prompt("Какой цвет вашего телефона?"),
+            //     owner: person,
+            // };
+
+            // -------------------------imperative array fill 3
+
+            // let arr = [prompt("Введите элемент 1"), prompt("Введите элемент 2"), prompt("Введите элемент 3"),];
+            // console.log(arr);
+
+            // -------------------------while confirm
+
+            // let cycleWhile = confirm();
+            // while (!cycleWhile) {
+            //     cycleWhile = confirm();
+            // }
+
+            // -------------------------array fill
+
+            // let emptyArray = [];
+            // let emptyArray2 = [];
+            // while (emptyArray) {
+            //     emptyArray2.push(emptyArray = prompt("Введите что-то"));
+            //     if (emptyArray == null || false) {
+            //         emptyArray2.splice(-1,1);
+            //       break;
+            //     }
+            // }
+
+            // -------------------------array fill nopush
+
+            // let emptyArrayNoPush = [];
+            // for (let i = 0; i != null; i++) {
+            //     emptyArrayNoPush[i] = prompt("Введите что-то");
+            //     if (emptyArrayNoPush[i] === null){
+            //         emptyArrayNoPush.splice(-1,1);
+            //         break;
+            //     }
+            // }
+
+            // -------------------------infinite probability
+
+            // let randomNumber = Math.random();
+            // let numberOfIterations = 0;
+            // while (randomNumber) {
+            //     randomNumber = Math.random();
+            //     numberOfIterations += 1;
+            //     if (randomNumber > 0.9) {
+            //         alert(randomNumber);
+            //         alert("Количество итераций: " + numberOfIterations)
+            //         break;
+            //     }
+            // }
+
+            // -------------------------empty loop
+
+            // do {
+            // } while (prompt() == null);
+
+            // -------------------------progression sum
+
+            // for (var arr = [1]; arr.push((arr[arr.length - 1]) + 3); (arr[arr.length - 1]) < 20) {
+            //     if ((arr[arr.length - 1]) <= 20) {
+            //     } else {
+            //         arr.splice(-1,1);
+            //         let result = arr.reduce(function (sum, elem) {
+            //             return sum + elem;
+            //         }, 0);
+
+            //         console.log(result);
+            //         break;
+            //     }
+            // }
+
+            // -------------------------chess one line
+
+            // let lineWithResult = " ";
+            // for(i = 0; i < 10; i++) {
+
+            //         lineWithResult = lineWithResult + " ";
+            //      if(i % 2 === 1) {
+            //         lineWithResult = lineWithResult + "#";
+            //     }
+            // } console.log (lineWithResult);
+
+            // -------------------------numbers
+
+            // var c = "";
+            // for (let a = 0; a < 10; a++) {
+            //     for (b = 0; b < 10; b++) {
+            //         c = c + b;
+            //         if (b == 9) {
+            //             c = c + "\n";
+            //         }
+            //     }
+            // }console.log(c);
+
+            // -------------------------chess
+
+            // var latticeOrDot = "";
+            // for (let chessBoard = 0; chessBoard >= 0; chessBoard++) {
+            //     for (i = 0; i < 13; i++) {
+            //         if (i == 12) {
+            //         latticeOrDot = latticeOrDot + "\n";
+            //         } else if (i % 2) {
+            //             latticeOrDot = latticeOrDot + "#";
+            //         } else {
+            //             latticeOrDot = latticeOrDot + ".";
+            //         }
+            //     }
+            //     for (i = 0; i < 13; i++) {
+            //         if (i == 12) {
+            //         latticeOrDot = latticeOrDot + "\n";
+            //         } else if (i % 2) {
+            //             latticeOrDot = latticeOrDot + ".";
+            //         } else {
+            //             latticeOrDot = latticeOrDot + "#";
+            //         }
+            //     }
+            //     if (chessBoard == 4) {
+            //         console.log(latticeOrDot);
+            //     }
+            // }
+
+            // -------------------------cubes
+
+            // for (let indexСubes = []; ; ) {
+            //     let indexToPower = indexСubes.length;
+            //     let exponentiation = indexToPower ** 3;
+            //     indexСubes.push(exponentiation);
+            //     if (indexСubes.length == 20) {
+            //         console.log(indexСubes);
+            //         break;
+            //     }
+            // }
+
+            // -------------------------multiply table
+
+            let arr = Array(10);
+            for (let i = 1; i < 10; i++) {
+                arr[i] = [...Array(10)].map((arr, j) => i * j);
+            }
+            console.log(arr[6][5]);
+
+            // -------------------------matrix to html table
+
+            var string = "";
+            for (var i = 1; i <= 10; i++) {
+                string += "<tr>";
+                string += "<td><b>" + i + "</b></td>";
+                for (var j = 1; j <= 10; j++)
+                    string += "<td>" + i * j + "</td>";
+                string += "</tr>";
+            }
+            document.querySelector("table").innerHTML += string;
+
+            // -------------------------Задание на синий пояс: Треугольник
+            // debugger;
+            // var str = "";
+            // for (a = 0; a < 10; a++) {
+            //     for (let i = 0; i < 12; i++) {
+            //         if (i == "11") {
+            //             str = str + "\n";
+            //         } else if (i === 5) {
+            //             str = str + "#";
+            //         } else {
+            //             str = str + ".";
+            //         }
+            //     }
+            //     for (let i = 0; i < 12; i++) {
+            //         if (i == "11") {
+            //             str = str + "\n";
+            //         } else if (i === 4 || i === 5 || i === 6) {
+            //             str = str + "#";
+            //         } else {
+            //             str = str + ".";
+            //         }
+            //     }
+            //     for (let i = 0; i < 12; i++) {
+            //         if (i == "11") {
+            //             str = str + "\n";
+            //         } else if (
+            //             i === 3 ||
+            //             i === 4 ||
+            //             i === 5 ||
+            //             i === 6 ||
+            //             i === 7
+            //         ) {
+            //             str = str + "#";
+            //         } else {
+            //             str = str + ".";
+            //         }
+            //     }
+            //     for (let i = 0; i < 12; i++) {
+            //         if (i == "11") {
+            //             str = str + "\n";
+            //         } else if (
+            //             i === 0 ||
+            //             i === 1 ||
+            //             i === 9 ||
+            //             i === 10
+            //         ) {
+            //             str = str + ".";
+            //         } else {
+            //             str = str + "#";
+            //         }
+            //     }
+            //     for (let i = 0; i < 12; i++) {
+            //         if (i == "11") {
+            //             str = str + "\n";
+            //         } else if (
+            //             i === 0 ||
+            //             i === 10
+            //         ) {
+            //             str = str + ".";
+            //         } else {
+            //             str = str + "#";
+            //         }
+            //     }
+            //     for (let i = 0; i < 11; i++) {
+            //         str = str + "#";
+            //     }
+            //     if (a == 0) {
+            //         console.log(str);
+            //     }
+            // }
+
+            // -------------------------Задание на черный пояс: Электронная гадалка
+
+            // let predictArray = prompt("Введите 0 или 1");;
+            // let history = [1, 1, 1, 1];
+            // history.push(predictArray);
+            // history.shift();
+            // console.log(history);
+            // дальше я не смог придумать что делать((((
+        </script>
+    </body>
+</html>

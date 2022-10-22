@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Title</title>
+        <style>
+            body {
+                background: oldlace;
+            }
+
+            img {
+                width: 150px;
+                margin-left: 20px;
+            }
+            h1 {
+                text-align: center;
+                color: brown;
+            }
+
+            #div {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                margin: 0 auto;
+                align-items: center;
+            }
+            #img-block {
+                display: flex;
+                align-items: center;
+            }
+            #textBlock {
+                display: flex;
+            }
+            p {
+                padding-right: 20px;
+                color: brown;
+                font-size: 20px;
+            }
+            button {
+                margin: 0 auto;
+                width: 200px;
+                height: 40px;
+                background-color: bisque;
+                box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.3);
+            }
+            button:hover {
+                box-shadow: 0px;
+            }
+            .buttomP {
+                color: red;
+                margin: 0;
+                text-align: center;
+                font-size: 20px;
+                padding-left: 15px;
+            }
+            #list,
+            #amount,
+            #sum {
+                margin-bottom: 20px;
+                width: 300px;
+                height: 20px;
+                background-color: bisque;
+            }
+            #amount,
+            #sum {
+                width: 294px;
+            }
+            #text {
+                padding-left: 60px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>ГОПОТА МАРКЕТ</h1>
+        <div id="div">
+            <div id="img-block">
+                <div>
+                    <img
+                        src="data:image/jpeg;base64,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"
+                        alt=""
+                    />
+                    <p id="text">20 денег</p>
+                </div>
+                <div>
+                    <img
+                        src="https://euro-opt.shop/4119-large_default/chipsy-pringles-original-pringls-original-165g.jpg"
+                        alt=""
+                        width=""
+                    />
+
+                    <p id="text">10 денег</p>
+                </div>
+                <div>
+                    <img
+                        src="https://img3.zakaz.ua/1.1620828397.ad72436478c_2021-05-12_Tatiana/1.1620828397.SNCPSG10.obj.0.1.jpg.oe.jpg.pf.jpg.1350nowm.jpg.1350x.jpg"
+                        alt=""
+                    />
+                    <p id="text">30 денег</p>
+                </div>
+            </div>
+            <div id="textBlock">
+                <p>В наличии:</p>
+                <br />
+            </div>
+            <p>Чё надо?</p>
+            <select name="store" id="list" class="s-10">
+                <option value="пиво">Пиво</option>
+                <option value="чипсы">Чипсы</option>
+                <option value="сиги">Сиги</option>
+            </select>
+            <p>Скок надо?</p>
+            <input type="number" id="sum" class="i-3" />
+
+            <p>Давай бабки! Сдачи нету!</p>
+            <input type="number" id="amount" class="i-2" />
+            <button id="button" class="b-2">
+                <p class="buttomP">КУПИТЬ</p>
+            </button>
+            <p class="out-2" id="kassa">КАССА: 0 денег</p>
+        </div>
+
+        <script>
+            setTimeout(function () {
+                let parent = document.querySelector("#textBlock");
+                parent.lastElementChild.remove();
+                store.dispatch({ type: "КУПИТЬ", ШО: "пиво", СКОКА: 0 });
+            }, 1);
+
+            function reducer(state, { type, ШО, СКОКА, БАБЛО }) {
+                //объект action деструктуризируется на три переменных
+                if (!state) {
+                    //начальная уборка в ларьке:
+                    return {
+                        пиво: { price: 20, amount: 100 },
+                        чипсы: { price: 10, amount: 100 },
+                        сиги: { price: 30, amount: 100 },
+                        касса: { cash: 0 },
+                    };
+                }
+                let stateSHO = state[ШО].amount;
+                let statePrice = state[ШО].price;
+                if (
+                    type === "КУПИТЬ" &&
+                    stateSHO != 0 &&
+                    stateSHO >= 0 &&
+                    sum.value <= 100
+                ) {
+                    if((stateSHO - sum.value) >= 0) {
+                        if (statePrice * sum.value <= amount.value) {
+                        return  {
+                            ...state,
+                            [ШО]: {
+                                price: state[ШО].price,
+                                amount: stateSHO - СКОКА,
+                            },
+                            касса: {
+                                cash: +state.касса.cash + +amount.value,
+                            },
+                        };
+                    } else {
+                        alert("Мало денеге, пойди в мамы попроси!")
+                    }
+                    } else {
+                        alert("У нас нету столько товара")
+                        
+                    }
+                    
+                } else {
+                    alert("Либо у нас нету столько товара, либо говорить научись!")
+                    
+                }
+                return state; 
+                //если мы не поняли, что от нас просят в `action` - оставляем все как есть
+            }
+
+            function createStore(reducer) {
+                let state = reducer(undefined, {}); //стартовая инициализация состояния, запуск редьюсера со state === undefined
+                let cbs = []; //массив подписчиков
+
+                const getState = () => state; //функция, возвращающая переменную из замыкания
+                const subscribe = (cb) => (
+                    cbs.push(cb), //запоминаем подписчиков в массиве
+                    () => (cbs = cbs.filter((c) => c !== cb))
+                ); //возвращаем функцию unsubscribe, которая удаляет подписчика из списка
+
+                const dispatch = (action) => {
+                    const newState = reducer(state, action); //пробуем запустить редьюсер
+                    if (newState !== state) {
+                        //проверяем, смог ли редьюсер обработать action
+                        state = newState; //если смог, то обновляем state
+                        for (let cb of cbs) cb(); //и запускаем подписчиков
+                    }
+                };
+
+                return {
+                    getState, //добавление функции getState в результирующий объект
+                    dispatch,
+                    subscribe, //добавление subscribe в объект
+                };
+            }
+            const store = createStore(reducer);
+
+            //запомнит функцию во внутреннем массиве cbs.
+            //она будет запущена при любом успешном dispatch
+            const unsubscribe = store.subscribe(() =>
+                console.log(store.getState())
+            );
+
+            setTimeout(unsubscribe, 10000); //отпишемся через 10 секунд, например
+
+            //происходит запуск редьюсера, который создает новый state.
+            //dispatch запускает всех подписчиков из массива cbs
+            
+
+            console.log(store.getState());
+            store.subscribe(() => console.log(store.getState()));
+
+            for (let [good, amount] of Object.entries(store.getState())) {
+                console.log(good, amount);
+                let p = document.createElement("p");
+                p.innerHTML = `${good} (${amount})`;
+                textBlock.append(p);
+                button.onclick = () => {
+                    store.dispatch({
+                        type: "КУПИТЬ",
+                        ШО: list.value,
+                        СКОКА: sum.value,
+                    });
+                    kassa.innerHTML =
+                    "КАССА: " + store.getState().касса.cash + " денег"; 
+                    
+                    
+                };
+                store.subscribe(
+                    () =>
+                        (p.innerText = `${good} (${
+                            store.getState()[good].amount
+                        })`)
+                );
+            }
+           
+        </script>
+    </body>
+</html>

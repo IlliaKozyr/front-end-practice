@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+        />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Not Telegram</title>
+        <style>
+            body {
+                background-color: aqua;
+                margin: 0;
+            }
+            .logo {
+                background-color: blueviolet;
+            }
+            h1 {
+                text-align: center;
+                color: aqua;
+                height: 60px;
+                margin: 0;
+                padding-top: 20px;
+            }
+            input {
+                padding-left: 10px;
+                font-size: 20px;
+                width: 500px;
+                height: 50px;
+            }
+            #chat {
+                padding-left: 20px;
+                font-size: 25px;
+                color: aqua;
+                width: 1250px;
+                height: 600px;
+                background-color: blueviolet;
+            }
+            .inputBlock {
+                padding-left: 20px;
+            }
+            #button {
+                margin-top: 30px;
+                height: 50px;
+                width: 120px;
+                background-color: blueviolet;
+            }
+            #button:hover {
+                opacity: 0.8;
+            }
+            .buttonText {
+                margin: 0;
+                font-size: 20px;
+                color: aqua;
+            }
+            .chat {
+                max-width: 1250px;
+                margin: 0 auto;
+            }
+            .block {
+                max-width: 1200px;
+                border: 1px solid aqua;
+                border-radius: 2%;
+                padding: 0 30px;
+                margin: 7px 20px;
+                box-shadow: 7px 3px 3px black;
+                color: aqua;
+            }
+            #container{
+                padding-top: 15px;
+                background-color: blueviolet;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div class="chat">
+            <div class="logo">
+                <h1>Чат "Not Telegram"</h1>
+            </div>
+
+            <div class="">
+                <div class="inputBlock">
+                    <h2>Ваш ник:</h2>
+                    <input
+                        type="text"
+                        name="nickname"
+                        id="nick"
+                        value="illiaKozyr"
+                    />
+                    <h2>Ваше сообщение:</h2>
+                    <input
+                        type="text"
+                        name=""
+                        id="message"
+                        value="test message"
+                    />
+                    <br />
+                    <button id="button">
+                        <p class="buttonText">Отправить</p>
+                    </button>
+                    <h2>Чат:</h2>
+                </div>
+                <div id="container"></div>
+            </div>
+        </div>
+
+        <script>
+
+            const url = "http://students.a-level.com.ua:10012";
+            const nick = document.getElementById("nick");
+            const message = document.getElementById("message");
+            const btnSendMessage = document.getElementById("button");
+            const container = document.getElementById("container");
+            let nextMessageId = 1;
+            let delay = 2000;
+            setInterval(getMessages, delay);
+
+            function getMessages() {
+                jsonPost(url, { func: "getMessages", messageId: nextMessageId })
+                    .then((response) => response.json())
+                    .then((data) => {
+                        nextMessageId = data.nextMessageId;
+                        updateMessages(data.data);
+                    });
+            }
+
+            function jsonPost(url, data) {
+                return fetch(url, {
+                    method: "POST",
+                    body: JSON.stringify(data),
+                });
+            }
+
+            function updateMessages(messageList) {
+                messageList.forEach((msg) => {
+                    newGotMessage(msg);
+                });
+            }
+
+            function newGotMessage({ nick, message, timestamp }) {
+                const newBlock = document.createElement("div");
+                newBlock.classList.add("block");
+
+                const time = new Date(timestamp);
+                let html = "";
+                html += `<p>${nick}<p>`;
+                html += `<p class="message">"${message}"</p>`;
+                html += `<p>${time.toString().substring(16, 24)}</p>`;
+                newBlock.innerHTML = html;
+                container.prepend(newBlock);
+            }
+
+            btnSendMessage.addEventListener("click", sendAndCheck);
+
+            async function sendAndCheck() {
+                await sendMessage();
+                getMessages();
+                message.value = "";
+            }
+
+            async function sendMessage() {
+                jsonPost(url, {
+                    func: "addMessage",
+                    nick: nick.value,
+                    message: message.value,
+                });
+            }
+        </script>
+    </body>
+</html>

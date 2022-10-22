@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Homework 1 JavaScript</title>
+    </head>
+    <body>
+        <script> 
+            // -----
+            let CaloriesPerDay = 2000;
+            let CaloriesPerMeal = prompt(
+                "Введите, сколько калорий вы потребили:"
+            );
+            if (CaloriesPerMeal < CaloriesPerDay) {
+                let CalorieDifference = CaloriesPerDay - CaloriesPerMeal;
+                alert(
+                    "Вы ещё можете употребить: " +
+                        CalorieDifference +
+                        " калорий. Мало есть тоже плохо!"
+                );
+            } else if (CalorieDifference = CaloriesPerDay - CaloriesPerMeal){
+                alert(
+                    "Вы превысили лимит калорий в сутки на: " +
+                        CalorieDifference +
+                        "." +
+                        " Хватит жрать!"
+                );
+            } else {
+                alert ("Ошибка! Нужно вводить только цифры! Обновите страницу, чтобы попробовать снова!")
+            }
+        </script>
+    </body>
+</html>

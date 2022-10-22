@@ -1,0 +1,89 @@
+.App {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+.formBlock {
+    max-width: 2000px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px;
+}
+
+#aside,
+.cardBlock {
+  padding: 40px;
+}
+
+input {
+    width: 300px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    padding: 15px;
+    background-color: orange;
+    color: black;
+}
+
+button  {
+    width: 150px;
+    border-radius: 15px;
+    padding: 15px;
+    color: black;
+    cursor: pointer;
+}
+
+
+
+h2 {
+  color: orange;
+}
+
+.card h3,
+.card h4 {
+  color: olivedrab;
+}
+
+.Spoiler  {
+  text-align: center;
+}
+
+
+.Spoiler {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.Spoiler {
+  color: #61dafb;
+}
+
+
+.error{
+    background-color: red;
+}
+
+input{
+  outline: none;
+}
+
+.PasswordConfirmWrapper{
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+}
+
+
+
+input{
+  outline: none;
+}

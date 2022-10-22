@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			// -----------------------sort
+
+			var persons = [
+				{ name: "Иван", age: 17 },
+				{ name: "Мария", age: 35 },
+				{ name: "Алексей", age: 73 },
+				{ name: "Яков", age: 12 },
+			];
+
+			function sort(array, objectKey, boolean) {
+				if (boolean) {
+					array.sort((a, b) =>
+						a[objectKey] < b[objectKey] ? 1 : -1
+					);
+				} else {
+					array.sort((a, b) =>
+						a[objectKey] > b[objectKey] ? 1 : -1
+					);
+				}
+			}
+
+			// sort(persons, "age")
+			sort(persons, "name", false);
+
+			// ------------------------array map
+
+			var array = ["1", {}, null, undefined, "500", 700];
+
+			// array.map( a => (a === Number ? +a : a))
+
+			let b = array.map((a) => {
+				let number = Number(a);
+				return isNaN(a) ? a : number;
+			});
+			console.log(b);
+
+			// ------------------------array reduce
+
+			var array2 = ["0", 5, 3, "string", null];
+			let productNumber = array2.reduce(function (a, b) {
+				if (typeof b === "number") {
+					a *= b;
+				}
+				return a;
+			}, 1);
+			console.log(productNumber);
+
+			// ------------------------object filter
+
+			var phone = {
+				brand: "meizu",
+				model: "m2",
+				ram: 2,
+				color: "black",
+			};
+
+			function filter(obj, callback) {
+				let newObj = {};
+				for (let key in obj) {
+					if (callback(key, obj[key])) {
+						newObj = { ...newObj, [key]: obj[key] };
+					}
+				}
+				return newObj;
+			}
+
+			filter(phone, (key, value) => key === "color" || value === 2);
+
+			//-----------------------object map
+
+			function map(obj, callBack) {
+				let result = {};
+				for (let key in obj) {
+					result = { ...result, ...callBack(key, obj[key]) };
+					return result;
+				}
+			}
+
+			map({ name: "Иван", age: 17 }, function (key, value) {
+				var result = {};
+				result[key + "_"] = value + "$";
+				return result;
+			}); //должен вернуть {name_: "Иван$", age_: "17$"}
+
+			//-----------------------Рекурсия
+
+			function progression_sum(max_num_in_progressian) {
+				if (max_num_in_progressian === 1) return 1;
+
+				console.log(max_num_in_progressian);
+				let result =
+					progression_sum(max_num_in_progressian - 1) +
+					max_num_in_progressian;
+				console.log(max_num_in_progressian, result);
+
+				return result;
+			}
+
+			console.log(progression_sum(5));
+		</script>
+	</body>
+</html>

@@ -1,0 +1,319 @@
+body {
+    margin: 0;
+    background-color: aqua;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: yellow;
+    height: 100px;
+    max-width: 1800px;
+}
+.qwer {
+    display: flex;
+    align-items: center;
+}
+button {
+    height: 50px;
+    width: 150px;
+    margin-right: 30px;
+    background-color: aqua;
+    border-radius: 15px;
+    color: darkblue;
+    font-size: 20px;
+}
+
+button:hover {
+    transition: 300ms;
+    background-color: aliceblue;
+}
+
+input {
+    height: 20px;
+    width: 100px;
+    margin-right: 30px;
+    border-radius: 15px;
+    padding-left: 10px;
+}
+.mainBlock {
+    background-color: aquamarine;
+    width: 1500px;
+    min-height: 2000px;
+    padding-left: 30px;
+}
+#mainContainer {
+    display: flex;
+}
+#aside {
+    padding: 20px 20px 20px 20px;
+    width: 30%;
+    width: 300px;
+}
+#aside > a {
+    display: block;
+}
+a,
+p {
+    font-size: 30px;
+    text-decoration: none;
+}
+a {
+    color: black;
+}
+a:hover {
+    opacity: 0.5;
+}
+
+#main {
+    font-size: 30px;
+}
+
+.cartIcon {
+    padding: 10px 0 0 20px;
+    height: 80px;
+}
+
+#productPicture {
+    width: 200px;
+}
+
+#productBlock {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#productBlock img {
+    width: 300px;
+    height: 300px;
+}
+
+#productBlock h2 {
+    margin-top: 60px;
+}
+
+#flexBlockForGFO div button {
+    margin-left: 30px;
+}
+
+#productBlock p,
+#productBlock h2{
+    
+    margin-left:  30px;
+}
+
+#productBlock #goodOneImg {
+    padding-top: 30px;
+    width: 500px;
+    height: 500px;
+}
+
+#flexBlockForGFO { 
+    display: flex;
+}
+
+#productBlock a:hover {
+    opacity: 0.8;
+}
+
+#subCategories {
+    margin: 0 30px 30px 0
+}
+
+.card {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.card div {
+    padding: 40px;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+    border-top: 2px solid black;
+    min-width: 1030px;
+}
+
+#flexBlock {
+    display: flex;
+    padding-top: 30px;
+}
+
+#textBlock {
+    padding-left: 30px;
+}
+
+flexBlock img {
+    height: 400px;
+    width: 400px;
+}
+
+#h2text {
+    padding-right: 30px;
+}
+
+.b-container {
+    width: 200px;
+    height: 150px;
+    background-color: #ccc;
+    margin: 0px auto;
+    padding: 10px;
+    font-size: 30px;
+    color: #fff;
+    
+}
+.b-popup {
+    width: 100%;
+    min-height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    position: fixed;
+    top: 0px;
+}
+.b-popup .b-popup-content {
+    margin: 40px auto 0px auto;
+    width: 1000px;
+    min-height: 500px;
+    padding: 10px;
+    background-color: yellow;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #000;
+}
+
+.b-popup-content {
+    padding: 300px;
+    display: flex;
+
+    flex-direction: column;
+}
+
+#divToCart {
+    align-items: center;
+    padding: 30px;
+    display: flex;
+    width: 700px;
+}
+
+#divToCart img {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+#divToCart img,
+#divToCart h2 {
+    margin-right: 30px;
+}
+#divToCart h2 {
+    align-items: center;
+}
+
+.b-popup-content button {
+    width: 30px;
+    height: 30px;
+    margin: 0;
+}
+
+#buttonCloseCartId {
+    position: absolute;
+    top: 70px;
+    right: 420px;
+}
+
+#buttonDelete {
+    width: 100px;
+    position: absolute;
+    top: 70px;
+    right: 500px;
+}
+
+.b-poput-container-flex {
+    justify-content: center;
+}
+
+.b-poput-container-flex input {
+    margin-bottom: 30px;
+    width: 300px;
+    height: 40px;
+    font-size: 20px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.b-poput-container-flex h2 {
+    margin: 10px auto;
+}
+
+.b-poput-container-flex #buttonCloseCartId {
+    bottom: 910px;
+}
+
+#regInput,
+#loginInputt {
+    width: 150px;
+    height: 50px;
+    margin: 10px auto;
+}
+
+.addToCartButton {
+    font-size: 14px;
+}
+
+#buttonPlus,
+#buttonMinus {
+    margin-right: 10px;
+}
+
+#pCount {
+    border-radius: 50%;
+    background-color: red;
+    width: 10px;
+    height: 10px;
+    font-size: 14px;
+}
+
+.buyBlock {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.buyBlock button {
+    width: 150px;
+    height: 50px;
+    margin: 0 30px 0 30px;
+}
+.h2History {
+    font-size: 14px;
+}
+
+.linkCard { 
+    border: 2px solid darkblue;
+    background-color: aqua;
+    color: darkblue;
+    border-radius: 15px;
+    padding: 12px;
+    margin-left: 30px;
+    font-size: 20px;
+}
+
+.card div button {
+    margin-left: 20px;
+    border-radius: 15px;
+}
+
+.footer {
+    padding-top: 20px;
+    color: white;
+    min-height: 80px;
+    background-color: tomato;
+    text-align: center;
+
+
+}
+
+.b-popup-content::-webkit-scrollbar{
+    width: 0px;
+    height: 0px;
+  }
+
+#removePosition {
+    width: 100px;
+}
